@@ -29,6 +29,8 @@ dependencies {
     implementation("io.ktor:ktor-server-netty-jvm:$ktor_version")
     implementation("ch.qos.logback:logback-classic:$logback_version")
 
+    implementation("io.github.cdimascio:dotenv-kotlin:6.3.1")
+
     implementation("io.ktor:ktor-server-swagger:$ktor_version")
     implementation("io.ktor:ktor-server-openapi:$ktor_version")
 
