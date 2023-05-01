@@ -1,0 +1,39 @@
+openapi: "3.0.3"
+info:
+  title: "simple_sudoku_api API"
+  description: "simple_sudoku_api API"
+  version: "1.0.0"
+servers:
+- url: "https://sudoku.kristianskokars.com"
+paths:
+  /board:
+    get:
+      description: "Creates a valid 9x9 Sudoku board and returns it as a 2D Int array."
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                type: "array"
+                items:
+                  type: "array"
+  /board/verify:
+    post:
+      description: "Verifies if the given 9x9 Sudoku board (given as a 2D Int array)\
+        \ is a valid Sudoku board (i.e. is solved)"
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: "array"
+              items:
+                type: "array"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                type: "boolean"
